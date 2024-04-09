@@ -1,8 +1,15 @@
+:root {
+    --dark: #272727;
+    --blue: #5065c9;
+    --gray-100: #e7e7e7
+}
+
 * {
     font-family: "Roboto", sans-serif;
 }
 
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
 }
@@ -14,7 +21,37 @@ html, body {
 }
 
 .header-page {
-    background-color: #5065c9;
+    background-color: var(--blue);
     padding: 10px 0;
     box-shadow: 0 0 20px 0 #2d409373;
+}
+/* Fim Header */
+
+/* Inicio Main */
+.bg-color {
+    background-color: var(--dark);
+    min-height: 100vh;
+}
+
+.todo-list-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    color: var(--gray-100);
+}
+
+.new-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.new-header svg{
+    cursor: pointer;
+    transition: .3s;
+}
+
+.new-header svg:hover {
+    color: var(--blue);
 }
