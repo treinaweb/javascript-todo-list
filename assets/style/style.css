@@ -34,6 +34,7 @@ body {
 }
 
 .todo-list-container {
+    padding: 2rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -54,4 +55,9 @@ body {
 
 .new-header svg:hover {
     color: var(--blue);
+}
+
+.status-title {
+    text-shadow: 0 0 3px #c5c5d3b0;
+    text-align: center;
 }
