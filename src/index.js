@@ -1,3 +1,3 @@
-import { dragCardEvents } from "./events/dragCardEvents.js";
+import { listAllCards } from "./list/showCards.js";
 
-dragCardEvents();
+listAllCards();

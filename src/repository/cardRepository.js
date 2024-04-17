@@ -11,3 +11,5 @@ async function getAll(){
         return error
     }
 }
+
+export { getAll }
