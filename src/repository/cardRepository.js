@@ -25,4 +25,20 @@ async function changeStatus(id, status) {
     return await response.json();
 }
 
-export { getAll, changeStatus };
+async function createNew(title, description) {
+    const response = await myFetch("/todos", {
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            description,
+        }),
+    });
+
+    if (!response.ok) {
+        throw new Error("Erro ao criar nova tarefa");
+    }
+
+    return await response.json();
+}
+
+export { getAll, changeStatus, createNew };
