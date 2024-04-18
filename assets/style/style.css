@@ -138,3 +138,64 @@ body {
 .card p {
     color: #9c9c9f;
 }
+/* Fim Main */
+
+
+/* Modal Inicio */
+.modal-default {
+    border: solid 1px gray;
+    border-radius: 5px;
+    background-color: var(--dark);
+    padding: 20px;
+}
+
+.modal-default::backdrop {
+    background-color: #0000008a;
+}
+
+#new-card-modal div {
+    display: flex;
+    flex-direction: column;
+    color: #b8b5b5;
+}
+
+#new-card-modal input {
+    background-color: var(--dark);
+    margin: 10px 0;
+    border: solid 1px #8080808e;
+    border-radius: 5px;
+    color: inherit;
+    padding: 10px;
+    width: 20rem;
+}
+
+#new-card-modal button {
+    margin-top: 1rem;
+    background-color: var(--blue);
+    color: var(--gray-100);
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+    box-shadow: 2px 2px 7px 1px #0000006e;
+    transition: .2s;
+}
+
+#new-card-modal button:hover {
+    transform: scale(1.05);
+}
+
+.close-new-card-modal {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.close-new-card-modal:hover {
+    transform: scale(1.05);
+}
