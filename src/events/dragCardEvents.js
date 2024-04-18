@@ -1,3 +1,5 @@
+import { changeCardStatus } from "../status/changeCardStatusContainer.js";
+
 function dragCardEvents() {
     const cards = document.querySelectorAll(".card");
     cards.forEach((card, index) => {
@@ -28,8 +30,10 @@ function dropArea(cardDrop) {
         event.preventDefault();
         const cardIndex = event.dataTransfer.getData('text/plain');
         const draggedCard = document.querySelector(`[data-card-index="${cardIndex}"]`);
-        cardDrop.appendChild(draggedCard)
+        cardDrop.appendChild(draggedCard);
+        changeCardStatus(draggedCard, cardDrop);
     })
+    
 }
 
 export { dragCardEvents };
