@@ -1,7 +1,7 @@
-import { deleteCard } from "../delete/deleteCard";
-import { showDeleteModalEvent } from "./modalEvents";
+import { deleteCard } from "../delete/deleteCard.js";
+import { getDeleteModal, showDeleteModalEvent } from "./modalEvents.js";
 
-function deleteCardEvents() {
+export function deleteCardEvents() {
     const buttonsDeleteCard = document.querySelectorAll(".delete-item");
 
     buttonsDeleteCard.forEach((button) => {
@@ -14,6 +14,7 @@ function deleteCardEvents() {
                 button,
                 confirmDeleteButton
             );
+            cancelDeleteButtonEvent(confirmDeleteButton, onDeleteCard)
         });
     });
 }
@@ -23,11 +24,23 @@ function confirmDeleteButtonEvent(button, confirmDeleteButton) {
         const itemId = button.getAttribute("id");
 
         let cardToDelete = document.getElementById(itemId);
+
         deleteCard(itemId, cardToDelete);
 
+        getDeleteModal().close();
+        
         confirmDeleteButton.removeEventListener("click", deleteCardFn);
     };
     confirmDeleteButton.addEventListener("click", deleteCardFn);
 
     return deleteCardFn;
+}
+
+function cancelDeleteButtonEvent(confirmDeleteButton, deleteCardFn){
+    const cancelButton = document.querySelector("#cancel-delete");
+
+    cancelButton.addEventListener('click', ()=> {
+        getDeleteModal().close();
+        confirmDeleteButton.removeEventListener("click", deleteCardFn);
+    })
 }

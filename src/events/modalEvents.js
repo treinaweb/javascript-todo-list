@@ -11,11 +11,11 @@ function closeModal(actionTrigger, modal) {
 }
 
 function showDeleteModalEvent() {
-    getDeleteModal.showModal();
+    getDeleteModal().showModal();
 }
 
 function getDeleteModal() {
     return document.querySelector("#delete-confirm");
 }
 
-export { openModal, closeModal, showDeleteModalEvent };
+export { openModal, closeModal, showDeleteModalEvent, getDeleteModal };
