@@ -10,4 +10,12 @@ function closeModal(actionTrigger, modal) {
     });
 }
 
-export { openModal, closeModal };
+function showDeleteModalEvent() {
+    getDeleteModal.showModal();
+}
+
+function getDeleteModal() {
+    return document.querySelector("#delete-confirm");
+}
+
+export { openModal, closeModal, showDeleteModalEvent };
