@@ -23,4 +23,13 @@ function clearCards() {
     }) 
 }
 
-export { myFetch, clearCards };
+function clearForm() {
+    const form = document.forms["addNewCard"];
+    const formInputs = form.querySelectorAll('input');
+
+    formInputs.forEach(input => {
+        input.value = "";
+    })
+}
+
+export { myFetch, clearCards, clearForm };

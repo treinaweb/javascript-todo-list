@@ -1,5 +1,6 @@
 import { createNew } from "../repository/cardRepository.js";
 import { listAllCards } from "../list/showCards.js";
+import { clearForm } from "../helpers.js";
 
 async function addNewCard(event) {
     event.preventDefault();
@@ -14,6 +15,8 @@ async function addNewCard(event) {
 
             const createNewTaskModal = document.getElementById('new-card-modal');
             createNewTaskModal.close();
+
+            clearForm();
 
         } catch (error) {
             console.log(error);
