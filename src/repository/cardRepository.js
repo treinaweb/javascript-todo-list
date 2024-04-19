@@ -41,4 +41,14 @@ async function createNew(title, description) {
     return await response.json();
 }
 
-export { getAll, changeStatus, createNew };
+async function deleteById(id) {
+    const response = await myFetch(`/todos/${id}`, {
+        method: "DELETE",
+    });
+    if (!response.ok) {
+        throw new Error("Falha ao deletar o item");
+    }
+    return "Item deletado com sucesso";
+}
+
+export { getAll, changeStatus, createNew, deleteById };
