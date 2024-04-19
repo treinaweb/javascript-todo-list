@@ -16,4 +16,11 @@ function myFetch(path, options = {}) {
     return fetch(url, mergedOptions);
 }
 
-export { myFetch };
+function clearCards() {
+    const cardsContainer = document.querySelectorAll(".cards-container");
+    cardsContainer.forEach(cardContainer=> {
+        cardContainer.innerHTML = "";
+    }) 
+}
+
+export { myFetch, clearCards };
