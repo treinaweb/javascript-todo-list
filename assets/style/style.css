@@ -281,7 +281,7 @@ body {
     color: var(--gray-100);
     padding: 0;
     width: 0;
-    transition: 1s;
+    transition: .4s;
 }
 
 #error {
