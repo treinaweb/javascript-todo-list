@@ -6,6 +6,9 @@
     --new: var(--blue);
     --doing: #c9921c;
     --finished: #1cc939;
+
+    --success: #1e9131;
+    --error: #d41717;
 }
 
 * {
@@ -262,4 +265,34 @@ body {
 #confirm-delete {
     color: inherit;
     background-color: #cf1919;
+}
+
+.message {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    bottom: 20px;
+    right: 20px;
+    font-size: .9rem;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    color: var(--gray-100);
+    padding: 0;
+    width: 0;
+    transition: 1s;
+}
+
+#error {
+    background-color: var(--error);
+}
+
+#success {
+    background-color: var(--success);
+}
+
+.show {
+    width: fit-content;
+    padding: 10px 20px;
 }
